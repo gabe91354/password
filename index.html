@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Input</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    text-align: center;
+    margin-top: 100px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Password is 1234</h2>
+  <form id="passwordForm">
+    <input type="password" id="password" name="password"><br><br>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="message"></p>
+</div>
+
+<script>
+  document.getElementById("passwordForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var password = document.getElementById("password").value;
+    if (password === "1234") {
+      document.getElementById("message").innerText = "Welcome, Your Password is right";
+    } else {
+      document.getElementById("message").innerText = "Wrong Password";
+    }
+    document.getElementById("password").value = ""; // Clear input field
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
